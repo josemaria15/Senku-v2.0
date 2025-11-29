@@ -84,14 +84,21 @@ JuegoSenku >> modo [
 { #category : 'game logic' }
 JuegoSenku >> moverDe: arg1 a: arg2 [
 
-	(ReglasSenku esMovimientoValidoEn: tablero origen: arg1 destino: arg2) ifFalse: [ ^ false ].
-	(tablero getCasillaAtRow: (arg1 at: 1) asInteger column: (arg1 at: 2) asInteger) quitarFicha.
-	(tablero getCasillaAtRow: (arg2 at: 1) asInteger column: (arg2 at: 2) asInteger) colocarFicha.
-	(tablero getCasillaAtRow: (arg1 at: 1) + (arg2 at: 1) // 2 asInteger column: (arg1 at: 2) + (arg2 at: 2) // 2 asInteger)
-		quitarFicha.
-	fichasRestantes := fichasRestantes - 1.
-	movimientos := movimientos + 1.
-	^ true
+    (ReglasSenku esMovimientoValidoEn: tablero origen: arg1 destino: arg2) ifFalse: [ ^ false ].
+
+    "Quitamos ficha del origen "
+    (tablero getCasillaAtRow: arg1 first asInteger column: arg1 second asInteger) quitarFicha.
+    
+    "Ponemos ficha en el destino"
+    (tablero getCasillaAtRow: arg2 first asInteger column: arg2 second asInteger) colocarFicha.
+
+    "Quitamos la ficha del medio (Cálculo del promedio)"
+    (tablero getCasillaAtRow: ((arg1 first + arg2 first) // 2) asInteger 
+             column: ((arg1 second + arg2 second) // 2) asInteger) quitarFicha.
+
+    fichasRestantes := fichasRestantes - 1.
+    movimientos := movimientos + 1.
+    ^ true
 ]
 
 { #category : 'accessing' }
