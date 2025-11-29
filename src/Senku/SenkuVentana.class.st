@@ -121,7 +121,6 @@ SenkuVentana >> mostrarMensaje: arg1 [
 { #category : 'event handling' }
 SenkuVentana >> procesarClick: arg1 [
 
-	| tmp1 |
 	seleccion ifNotNil: [
 			(juego
 				 moverDe: {
