@@ -22,35 +22,35 @@ SenkuReglas >> configurarConApp: arg1 [
 	self addChild: tmp1.
 	tmp7 := '1. El objetivo es dejar una sola ficha en el tablero.' asRopedText.
 	tmp7 fontSize: 20.
-	tmp3 := BlTextElement new text: (tmp7 foreground: Color lightGray).
+	tmp3 := BlTextElement new text: (tmp7 foreground: Color white).
 	tmp3
 		padding: (BlInsets all: 10);
 		constraintsDo: [ :arg2 | arg2 horizontal matchParent ].
 	self addChild: tmp3.
 	tmp9 := '2. Para comer, una ficha debe saltar sobre otra hacia un hueco vacío.' asRopedText.
 	tmp9 fontSize: 20.
-	tmp3 := BlTextElement new text: (tmp9 foreground: Color lightGray).
+	tmp3 := BlTextElement new text: (tmp9 foreground: Color white).
 	tmp3
 		padding: (BlInsets all: 10);
 		constraintsDo: [ :arg3 | arg3 horizontal matchParent ].
 	self addChild: tmp3.
 	tmp11 := '3. Solo se puede saltar horizontal o verticalmente.' asRopedText.
 	tmp11 fontSize: 20.
-	tmp3 := BlTextElement new text: (tmp11 foreground: Color lightGray).
+	tmp3 := BlTextElement new text: (tmp11 foreground: Color white).
 	tmp3
 		padding: (BlInsets all: 10);
 		constraintsDo: [ :arg4 | arg4 horizontal matchParent ].
 	self addChild: tmp3.
 	tmp13 := '4. La ficha saltada es eliminada (come).' asRopedText.
 	tmp13 fontSize: 20.
-	tmp3 := BlTextElement new text: (tmp13 foreground: Color lightGray).
+	tmp3 := BlTextElement new text: (tmp13 foreground: Color white).
 	tmp3
 		padding: (BlInsets all: 10);
 		constraintsDo: [ :arg5 | arg5 horizontal matchParent ].
 	self addChild: tmp3.
 	tmp15 := '5. La partida termina cuando no quedan movimientos válidos.' asRopedText.
 	tmp15 fontSize: 20.
-	tmp3 := BlTextElement new text: (tmp15 foreground: Color lightGray).
+	tmp3 := BlTextElement new text: (tmp15 foreground: Color white).
 	tmp3
 		padding: (BlInsets top: 10 bottom: 30);
 		constraintsDo: [ :arg6 | arg6 horizontal matchParent ].

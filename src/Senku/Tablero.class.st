@@ -16,23 +16,6 @@ Tablero >> getCasillaAtRow: arg1 column: arg2 [
 ]
 
 { #category : 'initialization' }
-Tablero >> iinitializeTrioStart [
-
-	| tmp2 |
-	self inicializarTableroVacio.
-	1 to: 7 do: [ :tmp1 |
-			1 to: 7 do: [ :tmp3 |
-					tmp2 := nil.
-					tmp2 := self getCasillaAtRow: tmp1 column: tmp3.
-					(tmp2 isNotNil and: [ tmp2 esJugable ]) ifTrue: [ tmp2 colocarFicha ] ].
-			1 ].
-	1.
-	(self getCasillaAtRow: 4 column: 4) quitarFicha.
-	(self getCasillaAtRow: 4 column: 2) quitarFicha.
-	(self getCasillaAtRow: 5 column: 4) quitarFicha
-]
-
-{ #category : 'initialization' }
 Tablero >> inicializarTableroVacio [
 
 	| tmp1 tmp2 tmp4 tmp5 |
@@ -103,7 +86,7 @@ Tablero >> initializeEnglishBoard [
 					tmp5 := (tmp3 between: 3 and: 5) or: [ tmp7 between: 3 and: 5 ].
 					tmp6 := (tmp3 = 4 and: [ tmp7 = 4 ])
 						        ifTrue: [ Casilla ESTADO_VACIA ]
-						        ifFalse: [ Casilla ESTADO_CON_CLAVIJA ].
+						        ifFalse: [ Casilla ESTADO_CON_FICHA ].
 					tmp2 at: tmp7 put: (Casilla new
 							 initialize: tmp3
 							 with: tmp7

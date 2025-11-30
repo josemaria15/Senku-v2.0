@@ -17,7 +17,7 @@ Class {
 }
 
 { #category : 'as yet unclassified' }
-Casilla class >> ESTADO_CON_CLAVIJA [
+Casilla class >> ESTADO_CON_FICHA [
 
 	ESTADO_CON_FICHA ifNil: [ ESTADO_CON_FICHA := 1 ] ifNotNil: [ ESTADO_CON_FICHA ].
 	^ ESTADO_CON_FICHA
